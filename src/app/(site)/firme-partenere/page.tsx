@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Authors Page - Next.js Blog Template",
-  description: "This is Authors Blog page for NextBlog",
+  description: "This is Authors Blog page for Promovare Digitala",
   // other metaDescription
 };
 

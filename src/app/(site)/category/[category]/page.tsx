@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: Props) {
 
   if (category) {
     return {
-      title: ` ${formattedCategory} | NextBlog - Next.js Blog Template`,
-      description: "This is the Category page for NextBlog",
-      author: "NextBlog",
+      title: ` ${formattedCategory} | Promovare Digitala - Next.js Blog Template`,
+      description: "This is the Category page for Promovare Digitala",
+      author: "Promovare Digitala",
 
       robots: {
         index: false,

@@ -1,7 +1,13 @@
+"use client";
+
 import Loader from "@/components/Common/Loader";
 import Link from "next/link";
+import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const EmailSignin = ({ handleSubmit, data, setData, loader }: any) => {
+  const [showPassword, setShowPassword] = useState(false); // Pentru a arăta/ascunde parola
+
   return (
     <div className="mt-6">
       <form onSubmit={handleSubmit}>
@@ -25,7 +31,7 @@ const EmailSignin = ({ handleSubmit, data, setData, loader }: any) => {
           />
         </div>
 
-        <div className="mb-5">
+        <div className="relative mb-5">
           <label
             htmlFor="password"
             className="mb-3 block text-custom-sm font-medium text-dark"
@@ -35,12 +41,19 @@ const EmailSignin = ({ handleSubmit, data, setData, loader }: any) => {
           <input
             value={data.password}
             onChange={(e) => setData({ ...data, password: e.target.value })}
-            type="password"
-            placeholder="Confirm password"
+            type={showPassword ? "text" : "password"} // Schimbă tipul în funcție de `showPassword`
+            placeholder="Enter your password"
             name="password"
             required
             className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-dark-4/20"
           />
+          <button
+            type="button"
+            className="absolute right-4 top-10 text-dark"
+            onClick={() => setShowPassword(!showPassword)} // Schimbă starea `showPassword`
+          >
+            {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+          </button>
         </div>
 
         <div className="mb-7.5 flex items-center justify-between">

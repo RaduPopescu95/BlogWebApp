@@ -17,7 +17,10 @@ const Signup = () => {
   });
 
   const [loader, setLoader] = useState(false);
-  const [isPassword, setIsPassword] = useState(false);
+  const [isPassword, setIsPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false); // Pentru a arăta/ascunde parola
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Pentru a arăta/ascunde confirmarea parolei
+  const [confirmPassword, setConfirmPassword] = useState(""); // Pentru câmpul de confirmare a parolei
 
   const { name, email, password } = data;
   const router = useRouter();
@@ -27,6 +30,10 @@ const Signup = () => {
 
     if (!name || !email || !password) {
       return toast.error("Something went wrong!");
+    }
+
+    if (password !== confirmPassword) {
+      return toast.error("Passwords do not match!");
     }
 
     setLoader(true);
@@ -81,7 +88,7 @@ const Signup = () => {
               <p className="text-body">Create your account</p>
             </div>
 
-            <button
+            {/* <button
               onClick={() => signIn("google")}
               className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-gray-4 p-3.5 text-dark duration-200 ease-in hover:border-gray-5 hover:bg-gray"
             >
@@ -141,7 +148,7 @@ const Signup = () => {
                 />
               </svg>
               Sign up with Github
-            </button>
+            </button> */}
 
             <span className="relative mt-9 block text-center text-custom-sm">
               <span className="absolute left-0 top-1/2 block h-px w-full max-w-30 bg-gray-3"></span>
@@ -149,10 +156,10 @@ const Signup = () => {
               Or sign up with email
             </span>
 
-            <SignupOption
+            {/* <SignupOption
               isPassword={isPassword}
               setIsPassword={setIsPassword}
-            />
+            /> */}
 
             {isPassword ? (
               <EmailSignup
@@ -160,6 +167,12 @@ const Signup = () => {
                 setData={setData}
                 handleSubmit={registerUser}
                 loader={loader}
+                confirmPassword={confirmPassword}
+                setConfirmPassword={setConfirmPassword}
+                showConfirmPassword={showConfirmPassword}
+                setShowConfirmPassword={setShowConfirmPassword}
+                showPassword={showPassword}
+                setShowPassword={setShowPassword}
               />
             ) : (
               <MagicLinkSignin isSignup={false} />

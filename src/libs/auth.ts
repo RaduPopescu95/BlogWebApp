@@ -135,130 +135,130 @@ import bcrypt from "bcrypt";
 import { User } from "@prisma/client";
 
 declare module "next-auth" {
-	interface Session extends DefaultSession {
-		user: User & DefaultSession["user"];
-	}
+  interface Session extends DefaultSession {
+    user: User & DefaultSession["user"];
+  }
 }
 
 export const authOptions: NextAuthOptions = {
-	pages: {
-		signIn: "/auth/signin",
-	},
-	adapter: PrismaAdapter(prisma),
-	secret: process.env.SECRET,
-	session: {
-		strategy: "jwt",
-	},
+  pages: {
+    signIn: "/auth/signin",
+  },
+  adapter: PrismaAdapter(prisma),
+  secret: process.env.SECRET,
+  session: {
+    strategy: "jwt",
+  },
 
-	providers: [
-		CredentialsProvider({
-			name: "credentials",
-			credentials: {
-				email: { label: "Email", type: "text", placeholder: "Jhondoe" },
-				password: { label: "Password", type: "password" },
-				username: { label: "Username", type: "text", placeholder: "Jhon Doe" },
-			},
+  providers: [
+    CredentialsProvider({
+      name: "credentials",
+      credentials: {
+        email: { label: "Email", type: "text", placeholder: "Jhondoe" },
+        password: { label: "Password", type: "password" },
+        username: { label: "Username", type: "text", placeholder: "Jhon Doe" },
+      },
 
-			async authorize(credentials) {
-				// check to see if eamil and password is there
-				if (!credentials?.email || !credentials?.password) {
-					throw new Error("Please enter an email or password");
-				}
+      async authorize(credentials) {
+        // check to see if eamil and password is there
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Please enter an email or password");
+        }
 
-				// check to see if user already exist
-				const user = await prisma.user.findUnique({
-					where: {
-						email: credentials.email,
-					},
-				});
+        // check to see if user already exist
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email,
+          },
+        });
 
-				// if user was not found
-				if (!user || !user?.hashedPassword) {
-					throw new Error("No user found");
-				}
+        // if user was not found
+        if (!user || !user?.hashedPassword) {
+          throw new Error("No user found");
+        }
 
-				// check to see if passwords match
-				const passwordMatch = await bcrypt.compare(
-					credentials.password,
-					user.hashedPassword
-				);
+        // check to see if passwords match
+        const passwordMatch = await bcrypt.compare(
+          credentials.password,
+          user.hashedPassword,
+        );
 
-				if (!passwordMatch) {
-					throw new Error("Incorrect password");
-				}
+        if (!passwordMatch) {
+          throw new Error("Incorrect password");
+        }
 
-				return user;
-			},
-		}),
+        return user;
+      },
+    }),
 
-		EmailProvider({
-			server: {
-				host: process.env.EMAIL_SERVER_HOST,
-				port: Number(process.env.EMAIL_SERVER_PORT),
-				auth: {
-					user: process.env.EMAIL_SERVER_USER,
-					pass: process.env.EMAIL_SERVER_PASSWORD,
-				},
-			},
-			from: process.env.EMAIL_FROM,
-		}),
+    EmailProvider({
+      server: {
+        host: process.env.EMAIL_SERVER_HOST,
+        port: Number(process.env.EMAIL_SERVER_PORT),
+        auth: {
+          user: process.env.EMAIL_SERVER_USER,
+          pass: process.env.EMAIL_SERVER_PASSWORD,
+        },
+      },
+      from: process.env.EMAIL_FROM,
+    }),
 
-		GitHubProvider({
-			clientId: process.env.GITHUB_CLIENT_ID || "",
-			clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
-		}),
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID || "",
+      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+    }),
 
-		GoogleProvider({
-			clientId: process.env.GOOGLE_CLIENT_ID || "",
-			clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-		}),
-	],
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || "",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+    }),
+  ],
 
-	callbacks: {
-		jwt: async (payload: any) => {
-			const { token, trigger, session } = payload;
-			const user: User = payload.user;
+  callbacks: {
+    jwt: async (payload: any) => {
+      const { token, trigger, session } = payload;
+      const user: User = payload.user;
 
-			if (trigger === "update") {
-				// console.log(token.picture, session.user);
-				return {
-					...token,
-					...session.user,
-					stripePriceId: session.user.stripePriceId,
-					stripeCurrentPeriodEnd: session.user.stripeCurrentPeriodEnd,
-				};
-			}
+      if (trigger === "update") {
+        // console.log(token.picture, session.user);
+        return {
+          ...token,
+          ...session.user,
+          stripePriceId: session.user.stripePriceId,
+          stripeCurrentPeriodEnd: session.user.stripeCurrentPeriodEnd,
+        };
+      }
 
-			if (user) {
-				return {
-					...token,
-					uid: user.id,
-					stripePriceId: user.stripePriceId,
-					stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd,
-				};
-			}
-			return token;
-		},
+      if (user) {
+        return {
+          ...token,
+          uid: user.id,
+          stripePriceId: user.stripePriceId,
+          stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd,
+        };
+      }
+      return token;
+    },
 
-		session: async ({ session, token }) => {
-			if (session?.user) {
-				return {
-					...session,
-					user: {
-						...session.user,
-						id: token.sub,
-						stripePriceId: token.stripePriceId,
-						stripeCurrentPeriodEnd: token.stripeCurrentPeriodEnd,
-					},
-				};
-			}
-			return session;
-		},
-	},
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        return {
+          ...session,
+          user: {
+            ...session.user,
+            id: token.sub,
+            stripePriceId: token.stripePriceId,
+            stripeCurrentPeriodEnd: token.stripeCurrentPeriodEnd,
+          },
+        };
+      }
+      return session;
+    },
+  },
 
-	// debug: process.env.NODE_ENV === "developement",
+  // debug: process.env.NODE_ENV === "developement",
 };
 
 export const getAuthSession = async () => {
-	return getServerSession(authOptions);
+  return getServerSession(authOptions);
 };

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy & Policy | NextBlog - Next.js Blog Template",
-  description: "This is Privacy & Policy page for NextBlog",
+  title: "Privacy & Policy | Promovare Digitala - Next.js Blog Template",
+  description: "This is Privacy & Policy page for Promovare Digitala",
   // other metaDescription
 };
 

@@ -4,15 +4,19 @@ export function absoluteUrl(path: string) {
   }${path}`;
 }
 
-export function generatePostDetailsLink(post: any, isLoggedin:any, isSubscribed: any) {
+export function generatePostDetailsLink(
+  post: any,
+  isLoggedin: any,
+  isSubscribed: any,
+) {
   const postDetailsLink =
     (post.accessLevel === "user" && isLoggedin) ||
     (isLoggedin && isSubscribed) ||
     post.accessLevel === "free"
-      ? `/posts/${post.slug.current}`
+      ? `/postari/${post.slug.current}`
       : !isLoggedin && post.accessLevel === "user"
-      ? "/auth/signin"
-      : "/pricing";
+        ? "/auth/signin"
+        : "/pricing";
 
   return postDetailsLink;
 }

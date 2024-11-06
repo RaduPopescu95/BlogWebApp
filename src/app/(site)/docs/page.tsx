@@ -3,8 +3,8 @@ import { getAllPosts } from "@/libs/markdown";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Docs | NextBlog - Next.js Blog Template",
-  description: "This is Docs page for NextBlog",
+  title: "Docs | Promovare Digitala - Next.js Blog Template",
+  description: "This is Docs page for Promovare Digitala",
   // other metaDescription
 };
 

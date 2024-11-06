@@ -14,9 +14,9 @@ export async function generateMetadata() {
     return {
       title: `${
         post.title || "Single Post Page"
-      } | NextBlog - Next.js Blog Template`,
+      } | Promovare Digitala - Next.js Blog Template`,
       description: `${post.metaDescription?.slice(0, 136)}...`,
-      author: "NextBlog",
+      author: "Promovare Digitala",
 
       robots: {
         index: true,
@@ -32,10 +32,10 @@ export async function generateMetadata() {
       },
 
       openGraph: {
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
-        siteName: "NextBlog",
+        url: `${siteURL}/postari/${post?.slug?.current}`,
+        siteName: "Promovare Digitala",
         images: [
           {
             url: imageBuilder(post.mainImage).url(),
@@ -50,10 +50,10 @@ export async function generateMetadata() {
 
       twitter: {
         card: "summary_large_image",
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: `${post.metaDescription?.slice(0, 136)}...`,
-        creator: "@NextBlog",
-        site: "@NextBlog",
+        creator: "@PromovareDigitala",
+        site: "@PromovareDigitala",
         images: [imageBuilder(post?.mainImage).url()],
         url: `${siteURL}/blog/${post?.slug?.current}`,
       },
@@ -91,7 +91,7 @@ const BlogDetailsOne = async () => {
 
               <div className="mt-7.5 flex items-center justify-center gap-4">
                 <div className="flex h-12.5 w-12.5 overflow-hidden rounded-full">
-                  <Link href={`/author/${author?.slug.current}`}>
+                  <Link href={`/firme-partenere/${author?.slug.current}`}>
                     {author?.image && (
                       <Image
                         src={imageBuilder(author.image).url()!}
@@ -105,7 +105,7 @@ const BlogDetailsOne = async () => {
 
                 <div className="text-left">
                   <p className="mb-1 text-custom-lg font-medium text-dark">
-                    <Link href={`/author/${author?.slug.current}`}>
+                    <Link href={`/firme-partenere/${author?.slug.current}`}>
                       {post?.author?.name}
                     </Link>
                   </p>
@@ -155,7 +155,7 @@ const BlogDetailsOne = async () => {
                 <div className="flex flex-col gap-9 sm:flex-row sm:items-center">
                   <div className="flex h-[133px] w-full max-w-[133px] items-center justify-center rounded-full border border-gray-3">
                     <Link
-                      href={`/author/${author?.slug.current}`}
+                      href={`/firme-partenere/${author?.slug.current}`}
                       className="h-[97px] w-full max-w-[97px] overflow-hidden rounded-full shadow-img"
                     >
                       {author?.image && (
@@ -183,7 +183,7 @@ const BlogDetailsOne = async () => {
                       ))}
                     </div>
                     <Link
-                      href={`/author/${author?.slug.current}`}
+                      href={`/firme-partenere/${author?.slug.current}`}
                       className="mt-4 flex text-custom-sm text-primary"
                     >
                       View profile

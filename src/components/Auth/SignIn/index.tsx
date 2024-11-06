@@ -17,7 +17,7 @@ const SignIn = () => {
 
   const [loader, setLoader] = useState(false);
 
-  const [isPassword, setIsPassword] = useState(false);
+  const [isPassword, setIsPassword] = useState(true);
 
   const router = useRouter();
 
@@ -53,7 +53,7 @@ const SignIn = () => {
             <p className="text-body">Sign in to your account</p>
           </div>
 
-          <button
+          {/* <button
             onClick={() => signIn("google")}
             className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-gray-4 p-3.5 text-dark duration-200 ease-in hover:border-gray-5 hover:bg-gray"
           >
@@ -113,7 +113,7 @@ const SignIn = () => {
               />
             </svg>
             Sign in with Github
-          </button>
+          </button> */}
 
           <span className="relative mt-9 block text-center text-custom-sm">
             <span className="absolute left-0 top-1/2 block h-px w-full max-w-30 bg-gray-3"></span>
@@ -121,7 +121,7 @@ const SignIn = () => {
             Or sign in with email
           </span>
 
-          <SignupOption isPassword={isPassword} setIsPassword={setIsPassword} />
+          {/* <SignupOption isPassword={isPassword} setIsPassword={setIsPassword} /> */}
 
           {isPassword ? (
             <EmailSignin

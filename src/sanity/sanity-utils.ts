@@ -31,7 +31,7 @@ export async function sanityFetch<QueryResponse>({
 }): Promise<QueryResponse> {
   return client.fetch<QueryResponse>(query, qParams, {
     cache: "force-cache",
-    next: { tags },
+    next: { tags, revalidate: 60 },
   });
 }
 
@@ -63,6 +63,7 @@ export async function getPosts() {
     qParams: {},
     tags: ["post", "author"],
   });
+  console.log("data....", data.length);
   return data;
 }
 
@@ -72,6 +73,7 @@ export async function getPostsByAuthorSlug(slug: string) {
     qParams: { slug },
     tags: ["post", "author"],
   });
+
   return data;
 }
 

@@ -2,8 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Style Guide | NextBlog - Next.js Blog Template",
-  description: "This is Style Guide page for NextBlog",
+  title: "Style Guide | Promovare Digitala - Next.js Blog Template",
+  description: "This is Style Guide page for Promovare Digitala",
   // other metaDescription
 };
 

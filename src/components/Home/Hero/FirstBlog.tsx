@@ -54,7 +54,7 @@ const FirstBlog = ({ blog }: { blog: Blog }) => {
         <p className="max-w-[524px]">{metaDescription}</p>
         <div className="mt-5 flex items-center gap-2.5">
           <Link
-            href={`/author/${author?.slug.current}`}
+            href={`/firme-partenere/${author?.slug.current}`}
             className="flex items-center gap-3"
           >
             <div className="flex h-6 w-6 overflow-hidden rounded-full">
@@ -72,11 +72,11 @@ const FirstBlog = ({ blog }: { blog: Blog }) => {
 
           <p className="text-sm">
             {publishedAt &&
-              new Date(publishedAt)
-                .toDateString()
-                .split(" ")
-                .slice(1)
-                .join(" ")}
+              new Date(publishedAt).toLocaleDateString("ro-RO", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              })}
           </p>
         </div>
       </div>

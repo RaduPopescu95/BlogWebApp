@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col flex-wrap items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-0">
           <div>
             <p className="text-custom-sm">
-              &copy; {year} NextBlog. All rights reserved
+              &copy; {year} Promovare Digitala. All rights reserved
             </p>
           </div>
 
@@ -20,7 +20,7 @@ const Footer = () => {
                   className="group flex text-custom-sm leading-none duration-200 ease-in hover:text-dark"
                 >
                   <span className="bg-gradient-to-r from-dark to-dark bg-[length:0px_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_1px]">
-                    Privacy
+                    Poltica de confidentialitate
                   </span>
                 </Link>
               </li>
@@ -33,7 +33,7 @@ const Footer = () => {
                   className="group flex text-custom-sm leading-none duration-200 ease-in hover:text-dark"
                 >
                   <span className="bg-gradient-to-r from-dark to-dark bg-[length:0px_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_1px]">
-                    Terms
+                    Termeni si conditii
                   </span>
                 </Link>
               </li>
@@ -42,7 +42,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/auth/signup"
+                  href="/support"
                   className="group flex text-custom-sm leading-none duration-200 ease-in hover:text-dark"
                 >
                   <span className="bg-gradient-to-r from-dark to-dark bg-[length:0px_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_1px]">
@@ -55,22 +55,21 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/auth/signup"
+                  href="/inscrie-firma"
                   className="group flex text-custom-sm leading-none duration-200 ease-in hover:text-dark"
                 >
                   <span className="bg-gradient-to-r from-dark to-dark bg-[length:0px_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_1px]">
-                    Contribute
+                    Înscrie firma
                   </span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <div className="flex items-center gap-3">
               <p className="text-custom-sm font-medium text-dark">Follow Us:</p>
 
-              {/* <!-- Social Links start --> */}
               <div className="flex items-center gap-1.5">
                 <a
                   href="#"
@@ -149,9 +148,8 @@ const Footer = () => {
                   </svg>
                 </a>
               </div>
-              {/* <!-- Social Links end --> */}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

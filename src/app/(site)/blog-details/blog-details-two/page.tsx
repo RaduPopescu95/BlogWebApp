@@ -19,9 +19,9 @@ export async function generateMetadata() {
     return {
       title: `${
         post.title || "Single Post Page"
-      } | NextBlog - Next.js Blog Template`,
+      } | Promovare Digitala - Next.js Blog Template`,
       description: `${post.metaDescription?.slice(0, 136)}...`,
-      author: "NextBlog",
+      author: "Promovare Digitala",
 
       robots: {
         index: true,
@@ -37,10 +37,10 @@ export async function generateMetadata() {
       },
 
       openGraph: {
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
-        siteName: "NextBlog",
+        url: `${siteURL}/postari/${post?.slug?.current}`,
+        siteName: "Promovare Digitala",
         images: [
           {
             url: imageBuilder(post.mainImage).url(),
@@ -55,10 +55,10 @@ export async function generateMetadata() {
 
       twitter: {
         card: "summary_large_image",
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: `${post.metaDescription?.slice(0, 136)}...`,
-        creator: "@NextBlog",
-        site: "@NextBlog",
+        creator: "@PromovareDigitala",
+        site: "@PromovareDigitala",
         images: [imageBuilder(post?.mainImage).url()],
         url: `${siteURL}/blog/${post?.slug?.current}`,
       },
@@ -95,7 +95,7 @@ const BlogDetailsTwo = async () => {
               <div className="mt-7.5 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
-                    href={`/author/${author?.slug.current}`}
+                    href={`/firme-partenere/${author?.slug.current}`}
                     className="flex h-12.5 w-12.5 overflow-hidden rounded-full"
                   >
                     {author?.image && (
@@ -110,7 +110,7 @@ const BlogDetailsTwo = async () => {
 
                   <div>
                     <p className="text-custom-lg font-medium text-dark">
-                      <Link href={`/author/${author?.slug.current}`}>
+                      <Link href={`/firme-partenere/${author?.slug.current}`}>
                         {author?.name}
                       </Link>
                     </p>
@@ -175,7 +175,7 @@ const BlogDetailsTwo = async () => {
 
                 <div className="relative z-30 flex flex-col gap-7.5 sm:flex-row">
                   <Link
-                    href={`/author/${author?.slug.current}`}
+                    href={`/firme-partenere/${author?.slug.current}`}
                     className="h-[97px] w-full max-w-[97px] overflow-hidden rounded-full border-[6px] border-white shadow-1"
                   >
                     {author?.image && (
@@ -190,7 +190,7 @@ const BlogDetailsTwo = async () => {
 
                   <div>
                     <h4 className="mb-3 text-custom-lg font-medium text-dark">
-                      <Link href={`/author/${author?.slug.current}`}>
+                      <Link href={`/firme-partenere/${author?.slug.current}`}>
                         Adrio Devid
                       </Link>
                     </h4>
@@ -199,7 +199,7 @@ const BlogDetailsTwo = async () => {
                       frank. Met simplicity nor difficulty unreserved who.
                     </p>
                     <Link
-                      href={`/author/${author?.slug.current}`}
+                      href={`/firme-partenere/${author?.slug.current}`}
                       className="mt-4 flex text-custom-sm text-primary"
                     >
                       View profile
@@ -213,7 +213,7 @@ const BlogDetailsTwo = async () => {
                 <Link
                   href={`${
                     posts.prevPost !== null
-                      ? `/posts/${posts?.prevPost?.slug.current}`
+                      ? `/postari/${posts?.prevPost?.slug.current}`
                       : "#/"
                   }`}
                   className="group w-1/2 rounded-l-md border-r border-gray-3 p-4 text-left duration-200 ease-in hover:bg-gray sm:p-7.5"
@@ -244,7 +244,7 @@ const BlogDetailsTwo = async () => {
                 <Link
                   href={`${
                     posts.nextPost !== null
-                      ? `/posts/${posts?.nextPost?.slug.current}`
+                      ? `/postari/${posts?.nextPost?.slug.current}`
                       : "#/"
                   }`}
                   className="group w-1/2 rounded-r-md p-4 text-right duration-200 ease-in hover:bg-gray sm:p-7.5"

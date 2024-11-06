@@ -3,8 +3,8 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Signin | NextBlog - Next.js Blog Template",
-  description: "This is signin page for NextBlog",
+  title: "Signin | Promovare Digitala - Next.js Blog Template",
+  description: "This is signin page for Promovare Digitala",
 };
 
 const SignInPage = () => {

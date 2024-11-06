@@ -10,14 +10,13 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
   const { tag } = params;
 
-  const formattedTag =
-    tag.charAt(0).toUpperCase() + tag.slice(1);
+  const formattedTag = tag.charAt(0).toUpperCase() + tag.slice(1);
 
   if (tag) {
     return {
-      title: ` ${formattedTag} | NextBlog - Next.js Blog Template`,
-      description: "This is the Tag page for NextBlog",
-      author: "NextBlog",
+      title: ` ${formattedTag} | Promovare Digitala - Next.js Blog Template`,
+      description: "This is the Tag page for Promovare Digitala",
+      author: "Promovare Digitala",
 
       robots: {
         index: false,

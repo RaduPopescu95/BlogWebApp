@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import SearchModal from "../Common/SearchModal";
 import DropDown from "./DropDown";
 import menuData from "./menuData";
-import GlobalSearchModal from "../GlobalSearch";
+// import GlobalSearchModal from "../GlobalSearch";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -56,8 +56,8 @@ const Header = () => {
           stickyMenu && "!py-4 shadow lg:!py-0"
         }`}
       >
-        <div className="navigation relative mx-auto max-w-[1170px] items-center justify-between px-4 sm:px-8 lg:flex xl:px-0 ">
-          <div className="flex w-full items-center justify-between lg:w-3/12">
+        <div className="navigation relative mx-auto max-w-[1270px] items-center justify-between px-4 sm:px-8 lg:flex xl:px-0 ">
+          <div className="flex w-full items-center justify-between lg:w-2/12">
             <Link href="/">
               <Image
                 src="/images/logo/logo.svg"
@@ -116,7 +116,7 @@ const Header = () => {
           </div>
 
           <div
-            className={` invisible h-0 w-full items-center justify-between lg:visible lg:flex lg:h-auto lg:w-9/12 ${
+            className={` invisible h-0 w-full items-center justify-between lg:visible lg:flex lg:h-auto lg:w-10/12 ${
               navigationOpen &&
               `shadow-lgrelative !visible mt-4 !h-auto max-h-[400px] overflow-y-scroll rounded-md bg-white p-7.5`
             }`}
@@ -157,7 +157,7 @@ const Header = () => {
             {/* <!--=== Nav Right Start ===--> */}
             <div className="mt-7 flex flex-col flex-wrap gap-8.5 lg:mt-0 lg:flex-row lg:items-center">
               {/* <!-- Social Links start --> */}
-              <div className="items-center gap-1.5 lg:hidden xl:flex">
+              {/* <div className="items-center gap-1.5 lg:hidden xl:flex">
                 <a
                   href="#"
                   aria-label="social link"
@@ -234,12 +234,12 @@ const Header = () => {
                     />
                   </svg>
                 </a>
-              </div>
+              </div> */}
               {/* <!-- Social Links end --> */}
 
               {/* <!-- Button Links start --> */}
               <div className="flex items-center gap-4.5">
-                <button
+                {/* <button
                   onClick={() => setSearchModalOpen(true)}
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-gray hover:bg-gray-2 hover:text-dark lg:transition-all lg:duration-200 lg:ease-linear"
                   aria-label="search button"
@@ -257,11 +257,11 @@ const Header = () => {
                       fill=""
                     />
                   </svg>
-                </button>
+                </button> */}
 
                 {typeof session !== "undefined" && (
                   <div className="group relative">
-                    {session ? (
+                    {/* {session ? (
                       <>
                         <button
                           onClick={() =>
@@ -298,14 +298,14 @@ const Header = () => {
                           </li>
                         </ul>
                       </>
-                    ) : (
-                      <Link
-                        href={"/auth/signin"}
-                        className="flex rounded-md bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear"
-                      >
-                        Sign in
-                      </Link>
-                    )}
+                    ) : ( */}
+                    <Link
+                      href={"/inscrie-firma"}
+                      className="flex rounded-md bg-dark px-5.5 py-2.5 font-medium text-white hover:opacity-90 lg:transition-all lg:duration-200 lg:ease-linear"
+                    >
+                      Înscrie firmă
+                    </Link>
+                    {/* )} */}
                   </div>
                 )}
               </div>
@@ -314,16 +314,16 @@ const Header = () => {
         </div>
       </header>
 
-      {searchModalOpen && (
-        // <SearchModal
-        //   isModalOpen={searchModalOpen}
-        //   setIsModalOpen={setSearchModalOpen}
-        // />
+      {/* {searchModalOpen && (
+        <SearchModal
+          isModalOpen={searchModalOpen}
+          setIsModalOpen={setSearchModalOpen}
+        />
         <GlobalSearchModal
           searchModalOpen={searchModalOpen}
           setSearchModalOpen={setSearchModalOpen}
         />
-      )}
+      )} */}
     </>
   );
 };

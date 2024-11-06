@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "404 | NextBlog - Next.js Blog Template",
-  description: "This is Error page for NextBlog",
+  title: "404 | Promovare Digitala - Next.js Blog Template",
+  description: "This is Error page for Promovare Digitala",
   // other metaDescription
 };
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Blog } from "@/types/blog";
 import { structuredAlgoliaHtmlData } from "@/libs/crawlIndex";
+import FirmaCallToAction from "@/components/Common/FirmaCallToAction";
 
 type Props = {
   params: { slug: string };
@@ -19,11 +20,11 @@ export async function generateMetadata({ params }: Props) {
     return {
       title: `${
         post.title || "Single Post Page"
-      } | NextBlog - Next.js Blog Template`,
+      } | Promovare Digitala - Next.js Blog Template`,
       description: `${post.metaDescription?.slice(0, 136)}...`,
-      author: "NextBlog",
+      author: "Promovare Digitala",
       alternates: {
-        canonical: `${siteURL}/posts/${post?.slug?.current}`,
+        canonical: `${siteURL}/postari/${post?.slug?.current}`,
         languages: {
           "en-US": "/en-US",
           "de-DE": "/de-DE",
@@ -44,10 +45,10 @@ export async function generateMetadata({ params }: Props) {
       },
 
       openGraph: {
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
-        siteName: "NextBlog",
+        url: `${siteURL}/postari/${post?.slug?.current}`,
+        siteName: "Promovare Digitala",
         images: [
           {
             url: imageBuilder(post.mainImage).url(),
@@ -62,10 +63,10 @@ export async function generateMetadata({ params }: Props) {
 
       twitter: {
         card: "summary_large_image",
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: `${post.metaDescription?.slice(0, 136)}...`,
-        creator: "@NextBlog",
-        site: "@NextBlog",
+        creator: "@PromovareDigitala",
+        site: "@PromovareDigitala",
         images: [imageBuilder(post?.mainImage).url()],
         url: `${siteURL}/blog/${post?.slug?.current}`,
       },
@@ -87,7 +88,7 @@ const BlogDetails = async ({ params }: Props) => {
     type: "blog",
     title: post?.title || "",
     htmlString: post?.metaDescription || "",
-    pageUrl: `${process.env.SITE_URL}/posts/${post?.slug?.current}`,
+    pageUrl: `${process.env.SITE_URL}/postari/${post?.slug?.current}`,
     imageURL: imageBuilder(post?.mainImage).url()!,
   });
 
@@ -109,7 +110,7 @@ const BlogDetails = async ({ params }: Props) => {
 
             <div className="mt-7.5 flex items-center justify-center gap-4">
               <div className="flex h-12.5 w-12.5 overflow-hidden rounded-full">
-                <Link href={`/author/${author?.slug?.current}`}>
+                <Link href={`/firme-partenere/${author?.slug?.current}`}>
                   {post?.author?.image && (
                     <Image
                       src={imageBuilder(post.author.image).url()!}
@@ -123,21 +124,21 @@ const BlogDetails = async ({ params }: Props) => {
 
               <div className="text-left">
                 <p className="mb-1 text-custom-lg font-medium text-dark">
-                  <Link href={`/author/${author?.slug?.current}`}>
+                  <Link href={`/firme-partenere/${author?.slug?.current}`}>
                     {post?.author?.name}
                   </Link>
                 </p>
                 <div className="flex items-center gap-1.5">
                   <p>
-                    {post.publishedAt &&
-                      new Date(post.publishedAt)
-                        .toDateString()
-                        .split(" ")
-                        .slice(1)
-                        .join(" ")}
+                    {post?.publishedAt &&
+                      new Date(post?.publishedAt).toLocaleDateString("ro-RO", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
                   </p>
                   <span className="flex h-[3px] w-[3px] rounded-full bg-dark-2"></span>
-                  <p>1 min read</p>
+                  <p>Parcurgi în 1 minut</p>
                 </div>
               </div>
             </div>
@@ -153,7 +154,7 @@ const BlogDetails = async ({ params }: Props) => {
             />
           )}
 
-          <div className="mx-auto max-w-[770px]">
+          <div className="mx-auto max-w-[870px]">
             <div className="blog-details blog-details-one">
               <RenderBodyContent post={post} />
             </div>
@@ -164,7 +165,7 @@ const BlogDetails = async ({ params }: Props) => {
                 href={`/archive`}
                 className="mt-10 rounded-md border border-dark px-7.5 py-3 font-medium text-dark duration-200 ease-in hover:bg-dark  hover:text-white"
               >
-                View all Posts
+                Vezi toate articolele
               </Link>
             </button>
 
@@ -173,7 +174,7 @@ const BlogDetails = async ({ params }: Props) => {
               <div className="flex flex-col gap-9 sm:flex-row sm:items-center">
                 <div className="flex h-[133px] w-full max-w-[133px] items-center justify-center rounded-full border border-gray-3">
                   <Link
-                    href={`/author/${author?.slug?.current}`}
+                    href={`/firme-partenere/${author?.slug?.current}`}
                     className="h-[97px] w-full max-w-[97px] overflow-hidden rounded-full shadow-img"
                   >
                     {author?.image && (
@@ -189,7 +190,7 @@ const BlogDetails = async ({ params }: Props) => {
 
                 <div>
                   <h4 className="mb-3 text-custom-lg font-medium text-dark">
-                    <Link href={`/author/${author?.slug?.current}`}>
+                    <Link href={`/firme-partenere/${author?.slug?.current}`}>
                       {author?.name}
                     </Link>
                   </h4>
@@ -201,17 +202,17 @@ const BlogDetails = async ({ params }: Props) => {
                     ))}
                   </div>
                   <Link
-                    href={`/author/${author?.slug.current}`}
+                    href={`/firme-partenere/${author?.slug.current}`}
                     className="mt-4 flex text-custom-sm text-primary"
                   >
-                    View profile
+                    Vezi profil firma
                   </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <NewsletterSignup />
+        <FirmaCallToAction />
       </section>
     </main>
   );

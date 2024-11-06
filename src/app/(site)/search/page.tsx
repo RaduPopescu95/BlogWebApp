@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Search Posts - Next.js Blog Template",
-  description: "This is Search page for NextBlog",
+  description: "This is Search page for Promovare Digitala",
   // other metaDescription
 };
 

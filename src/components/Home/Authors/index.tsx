@@ -14,11 +14,14 @@ const Authors = async () => {
       <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-8">
           <h2 className="text-heading-5 font-semibold text-dark">
-            Top Authors
+            Firme promovate
           </h2>
-          <Link href="/author" className="group leading-none text-dark">
+          <Link
+            href="/firme-partenere"
+            className="group leading-none text-dark"
+          >
             <span className="flex items-center gap-2 bg-gradient-to-r from-dark to-dark bg-[length:0px_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_1px]">
-              All Authors
+              Toate firmele
               <svg
                 className="fill-current transition-all group-hover:rotate-45"
                 width="18"

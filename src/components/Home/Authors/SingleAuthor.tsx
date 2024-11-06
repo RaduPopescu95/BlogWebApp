@@ -7,7 +7,7 @@ const SingleAuthor = async ({ author }: { author: Author }) => {
   const posts = await getPostsByAuthorSlug(author.slug.current);
 
   return (
-    <Link href={`/author/${author.slug.current}`} className="group">
+    <Link href={`/firme-partenere/${author.slug.current}`} className="group">
       <div className="rounded-[20px] border border-gray-3 bg-gray p-5 transition-all group-hover:-translate-y-2 group-hover:bg-white group-hover:drop-shadow-1">
         <div className="flex flex-wrap items-center gap-8">
           <div className="h-[100px] w-[100px] overflow-hidden rounded-full">
@@ -42,7 +42,7 @@ const SingleAuthor = async ({ author }: { author: Author }) => {
                   fill=""
                 />
               </svg>
-              {author.numberOfPosts} Published posts
+              {author.numberOfPosts} Articole
             </span>
           </div>
         </div>

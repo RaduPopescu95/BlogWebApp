@@ -8,8 +8,8 @@ import ManageSubscriptionCard from "@/components/AccountDetails/ManageSubscripti
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Account Details | NextBlog - Next.js Blog Template",
-  description: "This is Account Details page for NextBlog",
+  title: "Account Details | Promovare Digitala - Next.js Blog Template",
+  description: "This is Account Details page for Promovare Digitala",
 };
 
 const Stripe = async () => {

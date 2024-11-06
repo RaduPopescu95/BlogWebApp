@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: Props) {
     return {
       title: `${
         author.name || "Author Page"
-      } | NextBlog - Next.js Blog Template`,
+      } | Promovare Digitala - Next.js Blog Template`,
       description: author.description,
-      author: "NextBlog",
+      author: "Promovare Digitala",
 
       robots: {
         index: false,
@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: Props) {
       },
 
       openGraph: {
-        title: `${author.name} | NextBlog`,
+        title: `${author.name} | Promovare Digitala`,
         description: author.description,
-        url: `${siteURL}/author/${slug}`,
-        siteName: "NextBlog",
+        url: `${siteURL}/firme-partenere/${slug}`,
+        siteName: "Promovare Digitala",
         images: [
           {
             url: imageBuilder(author.image).url(),
@@ -49,12 +49,12 @@ export async function generateMetadata({ params }: Props) {
 
       twitter: {
         card: "summary_large_image",
-        title: `${author.name} | NextBlog`,
+        title: `${author.name} | Promovare Digitala`,
         description: `${author.description?.slice(0, 136)}...`,
-        creator: "@NextBlog",
-        site: "@NextBlog",
+        creator: "@PromovareDigitala",
+        site: "@PromovareDigitala",
         images: [imageBuilder(author.image).url()],
-        url: `${siteURL}/author/${slug}`,
+        url: `${siteURL}/firme-partenere/${slug}`,
       },
     };
   } else {

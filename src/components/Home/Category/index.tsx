@@ -10,8 +10,8 @@ const Category = async () => {
       <section className="pb-15 pt-20 lg:pt-25">
         <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
           <SectionHeader
-            title=" Browse by Category"
-            description="Select a category to see more related content"
+            title="Explorează pe Categorii"
+            description="Alege o categorie pentru a descoperi conținut relevant"
           />
 
           <CategoryMain posts={posts} />

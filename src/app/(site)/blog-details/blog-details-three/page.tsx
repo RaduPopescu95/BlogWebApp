@@ -15,9 +15,9 @@ export async function generateMetadata() {
     return {
       title: `${
         post.title || "Single Post Page"
-      } | NextBlog - Next.js Blog Template`,
+      } | Promovare Digitala - Next.js Blog Template`,
       description: `${post.metaDescription?.slice(0, 136)}...`,
-      author: "NextBlog",
+      author: "Promovare Digitala",
 
       robots: {
         index: true,
@@ -33,10 +33,10 @@ export async function generateMetadata() {
       },
 
       openGraph: {
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: post.metaDescription,
-        url: `${siteURL}/posts/${post?.slug?.current}`,
-        siteName: "NextBlog",
+        url: `${siteURL}/postari/${post?.slug?.current}`,
+        siteName: "Promovare Digitala",
         images: [
           {
             url: imageBuilder(post.mainImage).url(),
@@ -51,10 +51,10 @@ export async function generateMetadata() {
 
       twitter: {
         card: "summary_large_image",
-        title: `${post.title} | NextBlog`,
+        title: `${post.title} | Promovare Digitala`,
         description: `${post.metaDescription?.slice(0, 136)}...`,
-        creator: "@NextBlog",
-        site: "@NextBlog",
+        creator: "@PromovareDigitala",
+        site: "@PromovareDigitala",
         images: [imageBuilder(post?.mainImage).url()],
         url: `${siteURL}/blog/${post?.slug?.current}`,
       },
@@ -102,7 +102,7 @@ const BlogDetailsThree = async () => {
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
-                    href={`/author/${author?.slug.current}`}
+                    href={`/firme-partenere/${author?.slug.current}`}
                     className="flex h-8.5 w-8.5 overflow-hidden rounded-full"
                   >
                     {author?.image && (
@@ -118,7 +118,7 @@ const BlogDetailsThree = async () => {
                   <div className="flex flex-wrap items-center gap-4">
                     <div className="flex flex-wrap items-center gap-2.5">
                       <p className="text-custom-sm">
-                        <Link href={`/author/${author?.slug.current}`}>
+                        <Link href={`/firme-partenere/${author?.slug.current}`}>
                           {author?.name}
                         </Link>
                       </p>
@@ -168,7 +168,7 @@ const BlogDetailsThree = async () => {
 
                 <div className="mt-12.5 flex flex-wrap gap-8">
                   <Link
-                    href={`/author/${author?.slug.current}`}
+                    href={`/firme-partenere/${author?.slug.current}`}
                     className="flex h-30 w-full max-w-30 overflow-hidden rounded-full"
                   >
                     {author?.image && (
@@ -183,7 +183,7 @@ const BlogDetailsThree = async () => {
 
                   <div className="max-w-[617px]">
                     <h4 className="mb-3 text-[22px] font-medium leading-7 text-dark">
-                      <Link href={`/author/${author?.slug.current}`}>
+                      <Link href={`/firme-partenere/${author?.slug.current}`}>
                         Author: {author?.name}
                       </Link>
                     </h4>
@@ -298,7 +298,7 @@ const BlogDetailsThree = async () => {
                       {posts.slice(0, 3).map((post, key) => (
                         <Link
                           key={key}
-                          href={`/posts/${post.slug.current}`}
+                          href={`/postari/${post.slug.current}`}
                           className="group flex gap-6.5"
                         >
                           <div className="relative w-[80px]">

@@ -13,9 +13,9 @@ export async function generateMetadata({
 
   if (post) {
     return {
-      title: `${post.title || "Docs"} | NextBlog - Next.js Blog Template`,
+      title: `${post.title || "Docs"} | Promovare Digitala - Next.js Blog Template`,
       description: `${post.metaDescription?.slice(0, 136)}...`,
-      author: "NextBlog",
+      author: "Promovare Digitala",
 
       robots: {
         index: true,

@@ -53,7 +53,7 @@ const SingleBlog = ({ post }: { post: Blog }) => {
       <div className="mt-4.5 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <Link
-            href={`/author/${post?.author?.slug?.current}`}
+            href={`/firme-partenere/${post?.author?.slug?.current}`}
             className="flex items-center gap-3"
           >
             <div className="flex h-6 w-6 overflow-hidden rounded-full">
@@ -73,11 +73,11 @@ const SingleBlog = ({ post }: { post: Blog }) => {
 
           <p className="text-sm">
             {post.publishedAt &&
-              new Date(post.publishedAt)
-                .toDateString()
-                .split(" ")
-                .slice(1)
-                .join(" ")}
+              new Date(post.publishedAt).toLocaleDateString("ro-RO", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              })}
           </p>
         </div>
         <Link

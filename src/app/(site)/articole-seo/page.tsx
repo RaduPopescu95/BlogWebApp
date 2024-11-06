@@ -5,8 +5,8 @@ import { getPosts } from "@/sanity/sanity-utils";
 import { Blog } from "@/types/blog";
 
 export const metadata: Metadata = {
-  title: "Archive | NextBlog - Next.js Blog Template",
-  description: "This is archive page for NextBlog",
+  title: "Archive | Promovare Digitala - Next.js Blog Template",
+  description: "This is archive page for Promovare Digitala",
 };
 
 const ArchivePage = async () => {

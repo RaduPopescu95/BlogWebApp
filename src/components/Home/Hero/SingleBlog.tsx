@@ -50,7 +50,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
         </h2>
         <div className="flex items-center gap-2.5">
           <p className="text-sm">
-            <Link href={`/author/${author?.slug.current}`}>
+            <Link href={`/firme-partenere/${author?.slug.current}`}>
               By {author?.name}
             </Link>
           </p>
@@ -59,11 +59,11 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
 
           <p className="text-sm">
             {publishedAt &&
-              new Date(publishedAt)
-                .toDateString()
-                .split(" ")
-                .slice(1)
-                .join(" ")}
+              new Date(publishedAt).toLocaleDateString("ro-RO", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              })}
           </p>
         </div>
       </div>
