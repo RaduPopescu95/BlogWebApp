@@ -37,7 +37,7 @@ const Search = () => {
               ? `Search results for: ${query}`
               : "Search posts here"}
           </h1>
-          <p>{filtredPosts.length} Posts Found</p>
+          <p>{filtredPosts.length} Articole postate</p>
 
           <div className="mt-7.5">
             <form onSubmit={(e) => e.preventDefault()}>

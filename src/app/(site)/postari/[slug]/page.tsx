@@ -98,7 +98,7 @@ const BlogDetails = async ({ params }: Props) => {
         <div className="mx-auto max-w-[1030px] px-4 sm:px-8 xl:px-0">
           <div className="mx-auto max-w-[770px] text-center">
             <Link
-              href={`/category/${post.category}`}
+              href={`/categorie/${post.category}`}
               className="mb-1 inline-flex rounded-full bg-blue/[0.08] px-3 py-1 text-custom-sm font-medium capitalize text-blue "
             >
               {post.category}

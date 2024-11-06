@@ -46,7 +46,9 @@ const TagPage = async ({ params }: Props) => {
               <h1 className="mb-3.5 text-heading-6 font-bold capitalize text-dark sm:text-heading-4 lg:text-heading-3">
                 {tag}
               </h1>
-              <p>{posts?.length} Posts</p>
+              <p>
+                {posts?.length} {posts.length === 1 ? "Articol" : "Articole"}
+              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-x-7.5 gap-y-11 sm:grid-cols-2 lg:grid-cols-3">

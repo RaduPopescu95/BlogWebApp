@@ -39,7 +39,7 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
 
       <div className="w-full max-w-[540px]">
         <a
-          href={`/category/${blog.category}`}
+          href={`/categorie/${blog.category}`}
           className="inline-flex rounded-full bg-blue/[0.08] px-3 py-1 text-custom-sm font-medium capitalize text-blue"
         >
           {blog.category}

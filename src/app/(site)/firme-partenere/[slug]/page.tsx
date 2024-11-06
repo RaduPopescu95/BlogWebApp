@@ -6,6 +6,7 @@ import { imageBuilder } from "@/sanity/sanity-utils";
 import Image from "next/image";
 import { Blog } from "@/types/blog";
 import Link from "next/link";
+import FirmaCallToAction from "@/components/Common/FirmaCallToAction";
 
 type Props = {
   params: { slug: string };
@@ -138,7 +139,7 @@ const AuthorPage = async ({ params }: Props) => {
           </div>
         </div>
       </section>
-      <NewsletterSignup />
+      <FirmaCallToAction />
     </>
   );
 };

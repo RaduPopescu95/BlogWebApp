@@ -81,7 +81,7 @@ const SingleBlog = ({ post }: { post: Blog }) => {
           </p>
         </div>
         <Link
-          href={`/category/${post.category}`}
+          href={`/categorie/${post.category}`}
           className="inline-flex rounded-full bg-blue/[0.08] px-3 py-1 text-sm font-medium capitalize text-blue"
         >
           {post.category}
