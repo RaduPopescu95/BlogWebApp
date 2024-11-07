@@ -1,23 +1,20 @@
 "use client";
 import { useForm } from "formbold-react";
 
-const Support = ({formId}: {formId: string}) => {
+const Support = ({ formId }: { formId: string }) => {
   const [state, handleSubmit] = useForm(formId);
 
   if (state.succeeded) {
-    return <div className="mx-auto mt-40 text-center">
-      <h1 className="mb-3.5 text-custom-1 font-bold text-dark">
-        Thank you!
-      </h1>
-      <p>Our support team will get back to you ASAP via email.</p>
-      <button
-        className="mt-10 rounded-lg bg-dark px-6 py-3 font-medium text-white hover:opacity-90"
-      >
-        Back to Home
-      </button>
-    </div>;
+    return (
+      <div className="mx-auto mt-40 text-center">
+        <h1 className="mb-3.5 text-custom-1 font-bold text-dark">Thank you!</h1>
+        <p>Our support team will get back to you ASAP via email.</p>
+        <button className="mt-10 rounded-lg bg-dark px-6 py-3 font-medium text-white hover:opacity-90">
+          Back to Home
+        </button>
+      </div>
+    );
   }
-
 
   return (
     <div className="mx-auto mt-40 max-w-[550px] rounded-xl ">

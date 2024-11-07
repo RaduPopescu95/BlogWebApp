@@ -6,11 +6,11 @@ import Link from "next/link";
 
 const CategoryMain = ({ posts }: { posts: Blog[] }) => {
   const categories = [
-    "All",
+    "Toate",
     ...Array.from(new Set(posts.map((post) => post.category))),
   ];
 
-  const [activeCategory, setActiveCategory] = useState("All"); // Default to "All" category
+  const [activeCategory, setActiveCategory] = useState("Toate"); // Default to "Toate" category
   const filteredPosts =
     activeCategory === "Toate"
       ? posts
@@ -22,7 +22,7 @@ const CategoryMain = ({ posts }: { posts: Blog[] }) => {
       <div className="mb-15 flex flex-wrap items-center justify-center gap-4">
         {categories.map((categoryItem, key) => {
           const categoryPostCount =
-            categoryItem === "All"
+            categoryItem === "Toate"
               ? posts.length
               : posts.filter((post) => post.category === categoryItem).length;
 

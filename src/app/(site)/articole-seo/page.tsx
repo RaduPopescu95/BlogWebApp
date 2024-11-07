@@ -5,8 +5,10 @@ import { getPosts } from "@/sanity/sanity-utils";
 import { Blog } from "@/types/blog";
 
 export const metadata: Metadata = {
-  title: "Archive | Promovare Digitala - Next.js Blog Template",
-  description: "This is archive page for Promovare Digitala",
+  title:
+    "Articole despre Promovare Online, Creare Website si Dezvoltare Aplicatii Mobile",
+  description:
+    "Articole complete de promovare online, creare website si dezvoltare aplicatii mobile.Citeste pe blogul nostru si aplica ce inveti, astfel vei reusii sa iti cresti vanzarile",
 };
 
 const ArchivePage = async () => {

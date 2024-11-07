@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /account/
+Disallow: /auth/
+Disallow: /docs/
+Disallow: /pricing/
+Disallow: /politica-cookie/
+Disallow: /politica-de-confidentialitate/
+Disallow: /search/
+Disallow: /tags/
+Disallow: /error/
+
+Sitemap: https://acme.com/sitemap.xml

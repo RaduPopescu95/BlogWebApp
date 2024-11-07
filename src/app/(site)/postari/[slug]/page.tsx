@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props) {
       alternates: {
         canonical: `${siteURL}/postari/${post?.slug?.current}`,
         languages: {
+          "ro-RO": "/ro-RO",
           "en-US": "/en-US",
-          "de-DE": "/de-DE",
         },
       },
 
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: Props) {
             alt: post.title,
           },
         ],
-        locale: "en_US",
+        locale: "ro_RO",
         type: "article",
       },
 

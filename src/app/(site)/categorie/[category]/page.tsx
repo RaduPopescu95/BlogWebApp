@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: Props) {
 
   if (category) {
     return {
-      title: ` ${formattedCategory} | Promovare Digitala - Next.js Blog Template`,
-      description: "This is the Category page for Promovare Digitala",
+      title: `${formattedCategory} | Promovare Digitala`,
+      description: `Aici vei gasi articole despre ${formattedCategory}. Află mai multe pe blogul nostru și aplică sfaturile învățate pentru a-ți crește vânzările.`,
       author: "Promovare Digitala",
 
       robots: {
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props) {
     };
   } else {
     return {
-      title: "Not Found",
-      description: "No category has been found",
+      title: "Nu a fost gasita pagina",
+      description: "Nu a fost gasita nici o categorie",
     };
   }
 }

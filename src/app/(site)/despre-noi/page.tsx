@@ -5,8 +5,10 @@ import NewsletterSignup from "@/components/Common/NewsletterSignup";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About | Promovare Digitala - Next.js Blog Template",
-  description: "This is about page for Promovare Digitala",
+  title:
+    "Promovare Digitala - Experti in Promovare Online, Creare Website si Dezvoltare Aplicatii Mobile",
+  description:
+    "Promovare Digitala ofera servicii de promovare online, creare website si dezvoltare aplicatii mobile. Contacteaza-ne pentru solutii digitale eficiente!",
 };
 
 const AboutPage = () => {

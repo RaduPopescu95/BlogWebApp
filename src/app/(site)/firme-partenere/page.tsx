@@ -7,8 +7,9 @@ import { Author } from "@/types/author";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Authors Page - Next.js Blog Template",
-  description: "This is Authors Blog page for Promovare Digitala",
+  title: "Promovare Digitala - Firme Promovate",
+  description:
+    "Aici vei gasi firme partenere din Romania, pentru a fi mai usor de gasit ce ai nevoie in orasul tau. Trebuie doar sa selectezi firma unde doresti serviciul, sa vizitezi pagina partenerului nostru si sa te programezi.",
   // other metaDescription
 };
 
