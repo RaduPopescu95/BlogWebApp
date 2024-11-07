@@ -38,10 +38,10 @@ const InscrieFirma = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // înlocuiește cu serviceID-ul tău
-        "YOUR_TEMPLATE_ID", // înlocuiește cu templateID-ul tău
+        "service_4bilcxr", // înlocuiește cu serviceID-ul tău
+        "template_nmeg26h", // înlocuiește cu templateID-ul tău
         e.target as HTMLFormElement, // tip explicit
-        "YOUR_USER_ID", // înlocuiește cu userID-ul tău
+        "0YKYBGFsUcHd1F4jC", // înlocuiește cu userID-ul tău
       )
       .then(
         (result) => {

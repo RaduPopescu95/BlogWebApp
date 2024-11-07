@@ -40,12 +40,12 @@ const FirmaCallToAction = () => {
       setLoader(true);
 
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Înlocuiește cu serviceID-ul tău
-        "YOUR_TEMPLATE_ID", // Înlocuiește cu templateID-ul tău
+        "service_4bilcxr", // Înlocuiește cu serviceID-ul tău
+        "template_nmeg26h", // Înlocuiește cu templateID-ul tău
         {
           ...formData,
         },
-        "YOUR_USER_ID", // Înlocuiește cu userID-ul tău
+        "0YKYBGFsUcHd1F4jC", // Înlocuiește cu userID-ul tău
       );
 
       toast.success("Mulțumim pentru înscriere!");
