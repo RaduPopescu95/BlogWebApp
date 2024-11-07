@@ -1,17 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import emailjs from "emailjs-com";
 
 const Support = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  // Definim tipul pentru `handleSubmit` cu ajutorul `FormEvent`
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
+      name: (e.target as HTMLFormElement).name.value,
+      email: (e.target as HTMLFormElement).email.value,
+      message: (e.target as HTMLFormElement).message.value,
     };
 
     emailjs

@@ -4,7 +4,7 @@ import Support from "@/components/Support";
 const SupportPage = () => {
   return (
     <main>
-      <Support formId={process.env.FORM_ID!} />
+      <Support />
     </main>
   );
 };
