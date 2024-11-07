@@ -25,10 +25,6 @@ export async function generateMetadata({ params }: Props) {
       author: "Promovare Digitala",
       alternates: {
         canonical: `${siteURL}/postari/${post?.slug?.current}`,
-        languages: {
-          "ro-RO": "/ro-RO",
-          "en-US": "/en-US",
-        },
       },
 
       robots: {
