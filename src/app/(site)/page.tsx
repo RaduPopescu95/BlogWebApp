@@ -5,6 +5,7 @@ import Authors from "@/components/Home/Authors";
 import NewsletterSignup from "@/components/Common/NewsletterSignup";
 import { searchClient } from "@algolia/client-search";
 import FirmaCallToAction from "@/components/Common/FirmaCallToAction";
+import AboutPlatform from "@/components/Home/AboutPlatform";
 
 export const metadata: Metadata = {
   title:
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <Hero />
       <Category />
+      <AboutPlatform />
       <Authors />
       <FirmaCallToAction />
     </>
