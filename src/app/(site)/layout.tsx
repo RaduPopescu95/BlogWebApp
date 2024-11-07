@@ -23,6 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang="ro" suppressHydrationWarning>
+      <meta name="google-site-verification" content="4Oy9OuF_U8U8klw8BH9CPtlhGgM23UdFMlAYMGxdE_E" />
       <body>
         {loading ? (
           <PreLoader />
