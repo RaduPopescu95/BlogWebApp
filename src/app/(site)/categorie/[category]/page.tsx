@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props) {
       author: "Promovare Digitala",
 
       robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
         nocache: true,
       },
     };
