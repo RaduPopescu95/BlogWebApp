@@ -8,8 +8,8 @@ const AboutPlatform = () => {
         <div className="flex flex-col items-center gap-7.5 lg:flex-row xl:gap-14">
           <div className="w-full lg:max-w-[570px]">
             <Image
-              src="/images/about/about.png"
-              alt="Despre platformă"
+              src="/images/about/promovare-online-locala.png"
+              alt="Promovare online locala"
               className="w-full"
               width={570}
               height={400}
@@ -37,7 +37,7 @@ const AboutPlatform = () => {
             </p>
           </div>
         </div>
-        <div className="mt-17.5 flex flex-col items-center gap-7.5 lg:flex-row xl:gap-14">
+        <div className="mt-17.5 flex flex-col-reverse items-center gap-7.5 lg:flex-row xl:gap-14">
           <div className="w-full lg:max-w-[490px]">
             <span className="mb-2.5 inline-flex text-xl font-medium text-primary">
               Echipa noastră
@@ -59,7 +59,7 @@ const AboutPlatform = () => {
           </div>
           <div className="w-full lg:max-w-[570px]">
             <Image
-              src="/images/about/about.png"
+              src="/images/about/echipa-specializata.png"
               alt="Echipa noastră"
               className="w-full"
               width={570}
@@ -70,8 +70,8 @@ const AboutPlatform = () => {
         <div className="mt-17.5 flex flex-col items-center gap-7.5 lg:flex-row xl:gap-14">
           <div className="w-full lg:max-w-[570px]">
             <Image
-              src="/images/about/about.png"
-              alt="Despre platformă"
+              src="/images/about/misiunea-noastra.png"
+              alt="Misiunea noastra"
               className="w-full"
               width={570}
               height={400}
@@ -96,7 +96,7 @@ const AboutPlatform = () => {
             </p>
           </div>
         </div>
-        <div className="mt-17.5 flex flex-col items-center gap-7.5 lg:flex-row xl:gap-14">
+        <div className="mt-17.5 flex flex-col-reverse items-center gap-7.5 lg:flex-row xl:gap-14">
           <div className="w-full lg:max-w-[490px]">
             <span className="mb-2.5 inline-flex text-xl font-medium text-primary">
               Cum functioneaza
@@ -115,8 +115,8 @@ const AboutPlatform = () => {
           </div>
           <div className="w-full lg:max-w-[570px]">
             <Image
-              src="/images/about/about.png"
-              alt="Echipa noastră"
+              src="/images/about/abonamente-promovare-online.png"
+              alt="Abonamente promovare"
               className="w-full"
               width={570}
               height={400}
