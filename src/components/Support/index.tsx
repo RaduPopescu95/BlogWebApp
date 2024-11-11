@@ -1,26 +1,26 @@
-"use client";
 import { useState, FormEvent } from "react";
 import emailjs from "emailjs-com";
 
 const Support = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  // Definim tipul pentru `handleSubmit` cu ajutorul `FormEvent`
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = {
-      name: (e.target as HTMLFormElement).name.value,
-      email: (e.target as HTMLFormElement).email.value,
-      phone: (e.target as HTMLFormElement).phone.value,
-      message: (e.target as HTMLFormElement).message.value,
+    // Folosim FormData pentru a colecta valorile din formular
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
     };
 
     emailjs
       .send(
         "service_4bilcxr", // înlocuiește cu serviceID-ul tău
         "template_i97xbjh", // înlocuiește cu templateID-ul tău
-                formData,
+        data,
         "0YKYBGFsUcHd1F4jC" // Inlocuiește cu ID-ul tău de utilizator din EmailJS
       )
       .then(
@@ -47,19 +47,16 @@ const Support = () => {
   }
 
   return (
-    <div className="mx-auto mt-40 max-w-[550px] rounded-xl ">
+    <div className="mx-auto mt-40 max-w-[550px] rounded-xl">
       <div className="text-center">
         <h1 className="mb-3.5 text-custom-1 font-bold text-dark">Ai nevoie de ajutor?</h1>
         <p>Echipa noastră de suport va reveni cât mai curând posibil prin email.</p>
       </div>
 
-      <div className="my-10 bg-white p-4 shadow-box sm:p-7.5 xl:p-10 ">
+      <div className="my-10 bg-white p-4 shadow-box sm:p-7.5 xl:p-10">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="mb-3 block text-custom-sm font-medium text-dark"
-            >
+            <label htmlFor="name" className="mb-3 block text-custom-sm font-medium text-dark">
               Nume
             </label>
             <input
@@ -67,14 +64,11 @@ const Support = () => {
               placeholder="Introdu numele tău"
               required
               name="name"
-              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7  focus:border-transparent focus:ring-2 focus:ring-primary"
+              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7 focus:border-transparent focus:ring-2 focus:ring-primary"
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="mb-3 block text-custom-sm font-medium text-dark"
-            >
+            <label htmlFor="email" className="mb-3 block text-custom-sm font-medium text-dark">
               Email
             </label>
             <input
@@ -82,14 +76,11 @@ const Support = () => {
               placeholder="Introdu adresa ta de email"
               required
               name="email"
-              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7  focus:border-transparent focus:ring-2 focus:ring-primary"
+              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7 focus:border-transparent focus:ring-2 focus:ring-primary"
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="phone"
-              className="mb-3 block text-custom-sm font-medium text-dark"
-            >
+            <label htmlFor="phone" className="mb-3 block text-custom-sm font-medium text-dark">
               Numar telefon
             </label>
             <input
@@ -97,20 +88,17 @@ const Support = () => {
               placeholder="Introdu numarul tau de telefon"
               required
               name="phone"
-              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7  focus:border-transparent focus:ring-2 focus:ring-primary"
+              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7 focus:border-transparent focus:ring-2 focus:ring-primary"
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="message"
-              className="mb-3 block text-custom-sm font-medium text-dark"
-            >
+            <label htmlFor="message" className="mb-3 block text-custom-sm font-medium text-dark">
               Mesaj
             </label>
             <textarea
               name="message"
               placeholder="Scrie mesajul tău aici"
-              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7  focus:border-transparent focus:ring-2 focus:ring-primary"
+              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7 focus:border-transparent focus:ring-2 focus:ring-primary"
               cols={20}
               rows={5}
               required
