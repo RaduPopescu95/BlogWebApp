@@ -12,15 +12,16 @@ const Support = () => {
     const formData = {
       name: (e.target as HTMLFormElement).name.value,
       email: (e.target as HTMLFormElement).email.value,
+      phone: (e.target as HTMLFormElement).phone.value,
       message: (e.target as HTMLFormElement).message.value,
     };
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Inlocuiește cu ID-ul serviciului tău din EmailJS
-        "YOUR_TEMPLATE_ID", // Inlocuiește cu ID-ul șablonului tău din EmailJS
-        formData,
-        "YOUR_USER_ID" // Inlocuiește cu ID-ul tău de utilizator din EmailJS
+        "service_4bilcxr", // înlocuiește cu serviceID-ul tău
+        "template_i97xbjh", // înlocuiește cu templateID-ul tău
+                formData,
+        "0YKYBGFsUcHd1F4jC" // Inlocuiește cu ID-ul tău de utilizator din EmailJS
       )
       .then(
         (result) => {
@@ -37,7 +38,7 @@ const Support = () => {
     return (
       <div className="mx-auto mt-40 text-center">
         <h1 className="mb-3.5 text-custom-1 font-bold text-dark">Mulțumim!</h1>
-        <p>Echipa noastră de suport va reveni cât mai curând posibil prin email.</p>
+        <p>Echipa noastră de suport va reveni cât mai curând posibil.</p>
         <button className="mt-10 rounded-lg bg-dark px-6 py-3 font-medium text-white hover:opacity-90">
           Înapoi la Pagina Principală
         </button>
@@ -81,6 +82,21 @@ const Support = () => {
               placeholder="Introdu adresa ta de email"
               required
               name="email"
+              className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7  focus:border-transparent focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="phone"
+              className="mb-3 block text-custom-sm font-medium text-dark"
+            >
+              Numar telefon
+            </label>
+            <input
+              type="number"
+              placeholder="Introdu numarul tau de telefon"
+              required
+              name="phone"
               className="w-full rounded-md border border-gray-4 bg-white px-6 py-3.5 outline-none duration-200 placeholder:text-dark-2 focus:border-gray-7  focus:border-transparent focus:ring-2 focus:ring-primary"
             />
           </div>
