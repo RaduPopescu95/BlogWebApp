@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import type { Blog } from "@/types/blog"; // Tipul `Blog` ar trebui să includă `publishedAt`, `slug`, etc.
 import { getPosts } from "@/sanity/sanity-utils";
 
+export const revalidate = 3600
+
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const baseUrl = "https://promovare-digitala.ro";
 

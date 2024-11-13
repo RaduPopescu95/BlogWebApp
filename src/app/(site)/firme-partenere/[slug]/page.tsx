@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
     return {
       title: `${
         author.name || "Author Page"
-      } | Promovare Digitala - Next.js Blog Template`,
+      } | Promovare Digitala`,
       description: author.description,
       author: "Promovare Digitala",
 
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props) {
             alt: author?.name,
           },
         ],
-        locale: "en_US",
+        locale: "ro_RO",
         type: "article",
       },
 
