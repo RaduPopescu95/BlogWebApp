@@ -14,10 +14,11 @@ const Search = () => {
 
   const filterPosts = (query: any, county: string, locality: string) => {
     const results: Blog[] = posts.filter((post: Blog) => {
-      const matchesQuery = post.title.toLowerCase().includes(query.toLowerCase());
-      const matchesCounty = county ? post.county === county : true;
-      const matchesLocality = locality ? post.locality === locality : true;
-      return matchesQuery && matchesCounty && matchesLocality;
+      // const matchesQuery = post.title.toLowerCase().includes(query.toLowerCase());
+      // const matchesCounty = county ? post.county === county : true;
+      // const matchesLocality = locality ? post.locality === locality : true;
+      // return matchesQuery && matchesCounty && matchesLocality;
+      return null
     });
     setFiltredPosts(results);
   };
